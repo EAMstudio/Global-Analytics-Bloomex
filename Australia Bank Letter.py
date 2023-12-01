@@ -3,10 +3,8 @@ import pandas as pd
 
 def extract_data_from_email(email_text):
     # Паттерн для извлечения данных из раздела REQUESTS FOR INFORMATION REPORT
-    rfi_pattern = re.compile(
-        r"NAB RFI REF.: (\S+).*?CARD NUMBER : (\S+).*?MERCHANT: (.*?).*?DEADLINE : (\S+).*?TRAN. DATE : (\S+).*?AMOUNT \(.*?\): ([\d.]+).*?REASON : (.*?)\n",
-        re.DOTALL
-    )
+    rfi_pattern = re.compile(r"NAB RFI REF(\S+)", re.DOTALL)
+    print(rfi_pattern)
 
     # Извлечение данных из текста письма
     rfi_matches = rfi_pattern.findall(email_text)
@@ -14,13 +12,7 @@ def extract_data_from_email(email_text):
     # Если есть данные, создаем DataFrame
     if rfi_matches:
         rfi_data = {
-            'NAB RFI REF.': [match[0] for match in rfi_matches],
-            'CARD NUMBER': [match[1] for match in rfi_matches],
-            'MERCHANT': [match[2] for match in rfi_matches],
-            'DEADLINE': [match[3] for match in rfi_matches],
-            'TRAN. DATE': [match[4] for match in rfi_matches],
-            'AMOUNT': [float(match[5]) for match in rfi_matches],
-            'REASON': [match[6] for match in rfi_matches],
+            'NAB RFI REF.': rfi_matches
         }
 
         df_rfi = pd.DataFrame(rfi_data)
