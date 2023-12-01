@@ -1,33 +1,24 @@
 import re
 
-rfi_pattern = re.compile(
-    r"NAB RFI REF\.: (\S+)(?:.*?CARD NUMBER : (\S+))?(?:.*?MERCHANT: (.*?)\s*)?",
-#   r"NAB RFI REF\.: (\S+).*?CARD NUMBER : (\S+).*?MERCHANT: (.*?)\s*",
-#   r"NAB RFI REF\.: (\S+)(?:.*CARD NUMBER : (\S+))?(?:.*MERCHANT: (.*?)\s*)?",
-#   r"NAB RFI REF\.: (\S+)(?:.*?CARD NUMBER : (\S+))?(?:.*?MERCHANT: (.*?)\s*)?", #it works
-#   r"NAB RFI REF\.: (\S+)(?:.*CARD NUMBER : (\S+))?(?:.*MERCHANT: (.*?)\s*)?",
-    re.DOTALL
-)
-
-print("rfi_pattern: ", rfi_pattern)
-
-# Пример строки
 text = """
-1. NAB RFI REF.: VCI-4180237   CARD NUMBER : 0001        MERCHANT: BLOOMEX 
-2. NAB RFI REF.: VCI-4180238  CARD NUMBER : 0 MERCHANT: BLOOMEX
-3. NAB RFI REF.: VCI-4180239   CARD NUMBER : 0002        MERCHANT: BLOOMEX 
+REF.: N-1   CARD NUMBER : 001 MERCHANT: BLOOMEX
+REF.: N-2
+REF.: N-3   CARD NUMBER : 003
+REF.: N-4   MERCHANT: BLOOMEX
+REF.: N-5   CARD NUMBER : 005 MERCHANT: BLOOMEX
 """
 
-matches = rfi_pattern.findall(text)
 
-print("matches: ", matches)
+def extract_info(input_text):
+    pattern = re.compile(r'REF\.: (N-\d+)(?:\s+CARD NUMBER : (\d+))?(?:\s+MERCHANT: (\w+))?')
+    matches = pattern.findall(input_text)
 
-for match in matches:
-    nab_rfi_ref = match[0]
-    card_number = match[1]
-    merchant = match[2]
+    result = []
+    for match in matches:
+        result.append(tuple(part.strip() if part else None for part in match))
 
-    print("NAB RFI REF.:", nab_rfi_ref)
-    print("CARD NUMBER:", card_number)
-    print("MERCHANT:", merchant)
-    print("--------------")
+    return result
+
+
+output = extract_info(text)
+print(output)
