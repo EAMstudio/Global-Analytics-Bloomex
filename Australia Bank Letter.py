@@ -24,26 +24,26 @@ def extract_data_from_email(email_text):
 # Пример текста письма
 email_text = """
 ========================================================================================================================
-REQUESTS FOR INFORMATION REPORT - EMAIL                                                               28/11/2023 - 21:05
+REQUESTS FOR INFORMATION REPORT - EMAIL                                                               28/01/2021 - 21:05
 ========================================================================================================================
-NAB RFI REF.: VCI-4180237   CARD NUMBER : 4546 38xx xxxx 5378        MERCHANT: BLOOMEX PTY LTD
-DEADLINE    : 08.12.2023    REQUEST TYPE: RETRIEVAL - CBK                      UNIT 9/12-18 VICTORIA ST
-TRAN. DATE  : 11/11/2023    AMOUNT (NZD): 83.90                                LIDCOMBE NSW 2141
-TRAN TIME   : 20:02:46      TERMINAL ID.: 20547840 Y1T5TE            STORE NO: 000547840     CUSTNO: 895281823
+NAB RFI REF.: VCI-4180117   CARD NUMBER : 4116 38xx xxxx 5118        MERCHANT: BLOOMEX PTY LTD
+DEADLINE    : 08.12.2023    REQUEST TYPE: RANDOM - CBK                      UNIT 9/11-11 RANDOM ST
+TRAN. DATE  : 11/01/2021    AMOUNT (NZD): 10.90                                RANDOM NSW 2111
+TRAN TIME   : 20:02:46      TERMINAL ID.: 21147840 Y111TE            STORE NO: 000547840     CUSTNO: 811281113
 REASON      : Services/Merchandise not received                      AUTH. ID: 006673
-LOCATION    : BLOOMEX PTY LTD         EAST LIDCOMBE                       RRN: 200246844836
-CUSTOMER REF: z_202311110902_89509
+LOCATION    : RANDOM PTY LTD         EAST RANDOM                       RRN: 200246844836
+CUSTOMER REF: z_202311110902_11119
 ------------------------------------------------------------------------------------------------------------------------
-NAB RFI REF.: VCI-4180215   CARD NUMBER : 4147 34xx xxxx 2136        MERCHANT: BLOOMEX PTY LTD
-DEADLINE    : 08.12.2023    REQUEST TYPE: RETRIEVAL - CBK                      UNIT 9/12-18 VICTORIA ST
-TRAN. DATE  : 18/11/2023    AMOUNT (NZD): 74.90                                LIDCOMBE NSW 2141
-TRAN TIME   : 14:36:15      TERMINAL ID.: 20547840 Y1T5TE            STORE NO: 000547840     CUSTNO: 895281823
-REASON      : Services/Merchandise not received                      AUTH. ID: 02585D
-LOCATION    : BLOOMEX PTY LTD         EAST LIDCOMBE                       RRN: 143615820893
-CUSTOMER REF: z_202311180336_90709
+NAB RFI REF.: VCI-1111115   CARD NUMBER : 4117 34xx xxxx 2116        MERCHANT: BLOOMEX PTY LTD
+DEADLINE    : 08.12.2023    REQUEST TYPE: RANDOM - CBK                      UNIT 9/12-18 RANDOM ST
+TRAN. DATE  : 18/01/2021    AMOUNT (NZD): 11.90                                RANDOM NSW 2111
+TRAN TIME   : 14:36:15      TERMINAL ID.: 20117110 Y111TE            STORE NO: 000547840     CUSTNO: 811281113
+REASON      : Services/Merchandise not received                      AUTH. ID: 01185D
+LOCATION    : RANDOM PTY LTD         EAST RANDOM                       RRN: 111615820893
+CUSTOMER REF: z_211311180336_11119
 ------------------------------------------------------------------------------------------------------------------------
 TOTAL RFI DETAIL RECORDS:             2
-TOTAL VALUE OF RECORDS  :        158.80
+TOTAL VALUE OF RECORDS  :        23.80
 ------------------------------------------------------------------------------------------------------------------------
 """
 
